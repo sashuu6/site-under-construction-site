@@ -1,0 +1,497 @@
+﻿
+/*-----------------------------------------------------------------------------------
+
+	0.	RESET & CLEARFIX
+	1.	BASICS (body, headers, links, etc)
+	2.	HEADER
+	3.	CONTAINER
+	4.  POSTS
+    5.  FOOTER
+	6.  ANIMATIONS
+	7.  COMPONENT
+	8. CUSTOM
+	
+-----------------------------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------- 
+0. RESET & CLEARFIX
+------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+.overlaycaption,figure,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%; }
+	
+ol, ul  { list-style: none; }
+
+:focus  { outline: 0; }
+
+/* deleting the default appearence for form elements */
+input[type=text], input[type=password], input[type=submit], textarea, select { -moz-appearance: none; -webkit-appearance: none; }
+
+.clearfix:after { content: ""; display: block; clear: both; visibility: hidden; font-size: 0;  height: 0; }
+.clearfix { *display: inline-block; height: 1%; }
+.clear { clear: both; display: block; font-size: 0;	height: 0; line-height: 0; width:100%; }
+
+/* HTML5 display definitions */
+article, aside, details, .overlaycaption, figure, footer, header, hgroup, menu, nav, section, dialog { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; visibility: hidden; }
+
+
+
+
+/*---------------------------------------------- 
+1. BASICS
+------------------------------------------------*/
+html {
+	height: 100%;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%; /* Prevent iOS text size adjust on orientation change without disabling user zoom */
+	-ms-text-size-adjust: 100%;
+	position: relative;
+	}
+
+body {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+	font-weight: 300;
+	letter-spacing: 0.02em;
+	font-size:15px; 
+	line-height: 26px;
+	color:#4d4d4d; 
+	text-align: left; 
+	position: relative;
+	background: #f7f3f4;
+	height: 100%;
+	overflow: hidden;
+	-webkit-transform: translateY(0px);
+    -moz-transform:    translateY(0px);
+    -ms-transform:     translateY(0px);
+    -o-transform:      translateY(0px);
+    transform:         translateY(0px);
+    -webkit-transition: all 300ms ease-out 0s;
+    -moz-transition: all 300ms ease-out 0s;
+    -o-transition: all 300ms ease-out 0s;
+    transition: all 300ms ease-out 0s;
+}
+::selection { background:#0d0d0d; color:#ffffff; }
+::-moz-selection { background:#0d0d0d; color:#ffffff; }
+::-webkit-selection { background:#0d0d0d; color:#ffffff; }
+body.menu-open {
+    -webkit-transform: translateY(-350px);
+  -moz-transform:    translateY(-350px);
+  -ms-transform:     translateY(-350px);
+  -o-transform:      translateY(-350px);
+  transform:         translateY(-350px);
+}
+
+
+.container {
+    padding: 0;
+    width: 100%;
+	position: relative;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    padding: 0;
+}
+.row{margin:0;}
+a{color:#fff;}
+a:hover{color:#fff;}
+
+.rotate-text {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.devider {
+    border-top: 2px dashed #ededed;
+}
+
+
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('../images/loader.gif') center no-repeat #000;
+}
+
+
+
+
+
+/*---------------------------------------------- 
+2. HEADER
+------------------------------------------------*/
+.header {
+    position: absolute;
+    z-index: 1;
+}
+.logo{display: inline-block;
+    font-family: "Montserrat",serif;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 60px;
+    margin: 20px 50px;}
+.logo a {color:#fff;}
+
+
+
+.row.main-container {
+    z-index: 15;
+    background:#FDFDFB;
+    overflow:hidden;
+}
+
+/*************** SCROLLBAR BASE CSS ***************/
+ 
+.scroll-wrapper {
+    overflow: hidden !important;
+    position: relative;
+}
+ 
+.scroll-wrapper > .scroll-content {
+    border: none !important;
+    box-sizing: content-box !important;
+    height: auto;
+    left: 0;
+    margin: 0;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: scroll !important;
+    padding: 0;
+    position: relative !important;
+    top: 0;
+    width: auto !important;
+}
+ 
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+ 
+.scroll-element {
+    display: none;
+}
+.scroll-element, .scroll-element div {
+    box-sizing: content-box;
+}
+ 
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+    display: block;
+}
+ 
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+    cursor: default;
+}
+ 
+.scroll-textarea {
+    border: 1px solid #cccccc;
+    border-top-color: #999999;
+}
+.scroll-textarea > .scroll-content {
+    overflow: hidden !important;
+}
+.scroll-textarea > .scroll-content > textarea {
+    border: none !important;
+    box-sizing: border-box;
+    height: 100% !important;
+    margin: 0;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: scroll !important;
+    outline: none;
+    padding: 2px;
+    position: relative !important;
+    top: 0;
+    width: 100% !important;
+}
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+ 
+ 
+ 
+ 
+/*************** SCROLLBAR MAC OS X ***************/
+ 
+.scrollbar-macosx > .scroll-element,
+.scrollbar-macosx > .scroll-element div
+{
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+ 
+.scrollbar-macosx > .scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+ 
+.scrollbar-macosx > .scroll-element .scroll-element_track { display: none; }
+.scrollbar-macosx > .scroll-element .scroll-bar {
+    background-color: #6C6E71;
+    display: block;
+ 
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+ 
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+ 
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    -ms-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+}
+.scrollbar-macosx:hover > .scroll-element .scroll-bar,
+.scrollbar-macosx > .scroll-element.scroll-draggable .scroll-bar {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+ 
+ 
+.scrollbar-macosx > .scroll-element.scroll-x {
+    bottom: 0px;
+    height: 0px;
+    left: 0;
+    min-width: 100%;
+    overflow: visible;
+    width: 100%;
+}
+ 
+.scrollbar-macosx > .scroll-element.scroll-y {
+    height: 100%;
+    min-height: 100%;
+    right: 0px;
+    top: 0;
+    width: 0px;
+}
+ 
+/* scrollbar height/width & offset from container borders */
+.scrollbar-macosx > .scroll-element.scroll-x .scroll-bar { height: 7px; min-width: 10px; top: -9px; }
+.scrollbar-macosx > .scroll-element.scroll-y .scroll-bar { left: -9px; min-height: 10px; width: 7px; }
+ 
+.scrollbar-macosx > .scroll-element.scroll-x .scroll-element_outer { left: 2px; }
+.scrollbar-macosx > .scroll-element.scroll-x .scroll-element_size { left: -4px; }
+ 
+.scrollbar-macosx > .scroll-element.scroll-y .scroll-element_outer { top: 2px; }
+.scrollbar-macosx > .scroll-element.scroll-y .scroll-element_size { top: -4px; }
+ 
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-macosx > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -11px; }
+.scrollbar-macosx > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -11px; }
+
+
+
+
+
+
+/*---------------------------------------------- 
+4. POSTS
+------------------------------------------------*/
+
+
+
+
+
+
+/*---------------------------------------------- 
+Post & pages
+------------------------------------------------*/
+
+.page-title, blockquote {
+    color: #fff;
+}
+
+h1.page-title {
+    font-family: "Playfair Display SC",serif;
+    font-size: 48px;
+    margin:30px 0;
+    font-weight: bold;
+    line-height: 60px;
+    text-align:center;
+}
+
+.page-content .section.container{
+padding:20px;}
+
+.single-page-contentpart {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    padding: 0 0 76px;
+    text-align: center;
+}
+
+.comming-soon-page .single-page-contentpart {
+    padding: 0;
+    display: table;
+}
+.single-page-content-container{background:rgba(0,0,0,0.4);color:#fff;padding:40px 100px ;height: 100%;}
+.comming-soon-page .single-page-content-container {
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+    width: 100%;
+}
+.comming-soon-page .single-page-content-container-row {
+    display: table;
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
+}
+.comming-soon-page .page-title {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.page-title {
+    font-family: "Montserrat",sans-serif;
+    font-size: 25px;
+    letter-spacing: 5px;
+    line-height: 40px;
+    margin: 40px 0;
+}
+
+.comming-soon-page .page-summery {
+    width: 40%;
+}
+.page-content-single 
+{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 30px auto;
+    width: 90%;
+}
+
+
+.comming-soon-page .page-title{
+    font-size: 150px;
+    line-height: 100%;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+@media screen and (max-width:1280px)
+{
+.page-title {
+    font-size: 20px;
+    line-height: 25px;
+    margin: 25px 0;
+}
+.single-page-content-container{padding:40px 60px;}
+
+}
+
+
+
+
+@media screen and (max-width:1024px)
+{
+
+.logo {
+    margin: 10px 20px;
+}
+.comming-soon-page .page-title{
+    font-size: 70px;
+    padding: 0;
+    color:#fff;
+}
+.page-title {
+    margin: 10px 0;
+}
+.page-content-single {
+    margin: 15px auto;
+}
+.single-page-contentpart {
+    padding: 30px 15px 15px;
+}
+.single-page-contentpart {
+    padding: 0;
+}
+.single-page-content-container {
+    background: none;
+}
+
+}
+
+
+
+@media screen and (max-width:600px)
+{
+
+.comming-soon-page .page-title{
+    font-size: 40px;
+}
+
+}
+
+
+/*---------------------------------------------- 
+8. CUSTOM
+------------------------------------------------*/
+
+
+#post-container {
+    overflow: scroll !important;
+}
+
+.svg-container {
+  padding-bottom:67.3205033%;
+  position:relative;
+  background:#fff;
+}
+.svg-container__content {
+  position:absolute;
+  width:100%;
+  height:100%;
+  overflow:hidden
+}
+.svg-container__content svg {
+  width:100%;
+  height:100%
+}
+
+
+
+.comming-soon-page {
+    background: #5F4234;
+}
